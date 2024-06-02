@@ -15,7 +15,7 @@ const FileListItem = ({ file, onDelete }) => {
   return (
     <div className="file-item w-full h-8 flex items-center text-sm font-light ">
       <div
-        className="w-11/12 h-full px-4 py-2 flex flex-row justify-start items-center gap-x-3 text-primary rounded-lg border border-slate-300 shadow-sm cursor-move"
+        className="w-11/12 h-full px-4 py-2 flex flex-row justify-start items-center gap-x-3 text-primary rounded-lg border border-slate-300 shadow-sm cursor-move dark:text-gray-400 dark:border-border"
         ref={setNodeRef}
         style={style}
         {...attributes}
@@ -24,11 +24,9 @@ const FileListItem = ({ file, onDelete }) => {
         <Paperclip size={20} />
         {file.file?.name}
       </div>
-      <Trash2
-        size={14}
-        className="mx-auto text-destructive/60 cursor-pointer hover:text-destructive"
-        onClick={onDelete}
-      />
+      <div className="p-1.5 mx-auto text-destructive/60 cursor-pointer rounded-[50%] border border-destructive/60 hover:text-destructive hover:border-destructive dark:text-rose-600/60 dark:border-rose-600/60 dark:hover:text-rose-600 dark:hover:border-rose-600">
+        <Trash2 size={14} onClick={onDelete} />
+      </div>
     </div>
   );
 };

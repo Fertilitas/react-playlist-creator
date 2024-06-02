@@ -3,7 +3,6 @@ import JSZip from "jszip";
 export const createZip = async (files) => {
   try {
     const zip = new JSZip();
-    console.log("files", files);
 
     for (let i = 0; i < files.length; i++) {
       const file = files[i];

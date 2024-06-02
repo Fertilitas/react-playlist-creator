@@ -49,7 +49,6 @@ const PlaylistCreator = () => {
 
     try {
       const zipBlob = await createZip(musicFiles);
-      console.log(typeof zipBlob);
       const formData = new FormData();
       formData.append("file", zipBlob, "playlist.zip");
       setZipMusicFiles((prev) => [...prev, zipBlob]);
@@ -76,15 +75,12 @@ const PlaylistCreator = () => {
     }
   };
 
-  console.log({ musicFiles });
-  console.log({ zipMusicFiles });
-
   return (
     <div className="container flex flex-col justify-start items-center h-screen">
       <h1 className="font-el-messiri text-5xl text-primary font-bold tracking-widest mt-3 mb-3">
         Playlist Creator
       </h1>
-      <p className="text-md text-gray-500 font-light capitalize tracking-wide mb-3">
+      <p className="text-md text-gray-500 font-light capitalize tracking-wide mb-3 dark:text-gray-400">
         Make your playlist in{" "}
         <span className="text-primary font-bold uppercase">one click!</span>
       </p>
@@ -125,7 +121,7 @@ const PlaylistCreator = () => {
 
         <div className="w-2/12 h-full flex justify-center items-center">
           <Button
-            className="flex flex-row justify-center items-center bg-[#afbe7b]/80 text-white text-2xl font-semibold uppercase hover:bg-[#afbe7b]"
+            className="flex flex-row justify-center items-center bg-[#afbe7b]/80 text-white text-2xl font-semibold uppercase hover:bg-[#afbe7b] dark:bg-[#a78320]/80 dark:hover:bg-[#a78320]"
             disabled={!musicFiles.length || mergeLoading === true}
             onClick={handleMergeAndUpload}
           >
